@@ -1,0 +1,12 @@
+.footer-block__contact > div:first-child{
+    word-wrap: break-word;
+    box-shadow: 0px 10px 10px -10px #539da5;
+}
+.footer-block__about-us > div:first-child {
+    word-wrap: break-word;
+    box-shadow: 0px 10px 10px -10px #539da5;
+}
+.footer-block__developer > div:first-child {
+    word-wrap: break-word;
+    box-shadow: 0px 10px 10px -10px #539da5;
+}

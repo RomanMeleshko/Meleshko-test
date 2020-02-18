@@ -8,7 +8,20 @@
   </div>
 </template>
 
+<script>
+  export default {
+    name: "App",
+    data() {
+      return {
+
+      }
+    }
+  }
+</script>
+
 <style>
+@import "css/app.css";
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

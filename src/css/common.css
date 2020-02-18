@@ -1,0 +1,40 @@
+body {
+    background-size: 100% 100%;
+}
+.header-block {
+    font-family: Caveat-Bold;
+}
+.header-block {
+    font-size: 45px;
+    border-bottom-width: 50px;
+    box-shadow: 0px 10px 10px -10px #539da5;
+}
+.header-block > span:first-child{
+    color: #806430;
+}
+.header-block > span:last-child {
+    color: #458013;
+}
+
+.home-block__search-city {
+    box-shadow: 0px 10px 10px -10px #56a52a;
+}
+
+.home-block__cart {
+    border: 1px solid grey;
+    border-radius: 0px 20px 0px 20px;
+}
+
+.home-block__cart > div{
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.home-block__cart-city > p {
+    width: 100px;
+    position: relative;
+    box-shadow: 0px 10px 10px -10px #539da5;
+
+}
