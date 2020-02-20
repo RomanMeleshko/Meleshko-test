@@ -7,7 +7,7 @@ export default {
     actions: {
         infoWeather: async function(context) {
             let key = "cdadd613c8d4235e8a72fca5c38c7009";
-            let city = ["Kiev", "London", "Lviv", "Boston"];
+            let city = ["Kiev", "London", "Lviv", "Kharkiv"];
             let res;
             let data;
             let arr = [];

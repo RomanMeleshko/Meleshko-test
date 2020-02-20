@@ -1,48 +1,35 @@
 <template>
-    <div class="col-4">
-        <div class="additionalCity__info-city">
-            <div class="row justify-content-end">
-                <div class="col-3 pr-2">
-                    <div class="additionalCity__close">
-                        <p>
-                            X
-                        </p>
-                    </div>
+    <div class="row mt-3">
+
+        <div class="col-3" v-for="item in arrResultFromData" :key="item.id">
+            <div class="home-block__cart text-center p-2">
+                <div class="home-block__cart-city mt-4">
+                    <p>
+                        {{ item.name }}
+                    </p>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="additionalCity__name-city">
-                        <p>
-                            {{ getting }}
-                        </p>
-                    </div>
+                <div class="home-block__cart-temp">
+                    <p>
+                        {{ Math.round(item.main.temp - 273 )}} &#176;
+                    </p>
                 </div>
-                <div class="col-12">
-                    <div class="additionalCity__temperature">
-                        <p>
-                            -10%
-                        </p>
-                    </div>
+                <div class="header-block__cart-clouds">
+                    <p>
+                       {{ item.weather[0].main }}
+                    </p>
                 </div>
-                <div class="col-12">
-                    <div class="additionalCity__button__info">
-                        <p>
-                            {{ getting }}
-                        </p>
-                    </div>
+                <div class="header-block__cart-button">
+                    <p>
+                        <button class="button"
+                                v-on:click="$emit('remove-cart', item.name)"
+                        >Update</button>
+                    </p>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="additionalCity__button pt-4">
-                       <button v-on:click="updateData" class="w-75 rounded text-white">
-                           Update
-                       </button>
-                    </div>
-                </div>
+
             </div>
         </div>
+
+
     </div>
 </template>
 
@@ -51,40 +38,40 @@
         name: "BlockAdditionalCity.vue",
         data() {
             return {
-                nameCity: "",
-                temperature: "",
-                info: ""
+
             }
         },
-        computed: {
-            getting() {
-                return this.$store.getters.allInfo;
-            }
-        },
+        props: ["arrResultFromData"],
+
         methods: {
-            updateData() {
-                this.nameCity = "Lviv";
-            }
+
         }
 
     }
 </script>
 
 <style scoped>
-.additionalCity__info-city {
-    height: 250px;
-    background: #fff9ec;
-    border-radius: 10px;
+
+.home-block__cart {
+    border: 1px solid grey;
+    border-radius: 0px 20px 0px 20px;
+}
+
+.home-block__cart > div{
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.home-block__cart-city > p {
+    width: 100px;
     position: relative;
-    border: 2px solid #5d615b;
-    box-shadow: 3px 3px 10px #404033;
+    box-shadow: 0px 10px 10px -10px #539da5;
+
 }
-.additionalCity__button > button {
-    outline: none;
-    border: none;
-    background: #498b28;
+.header-block__close-cart > span {
+    position: relative;
 }
-.additionalCity__button > button:hover {
-    background: #42b983;
-}
+
 </style>
