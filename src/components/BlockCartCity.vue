@@ -1,9 +1,13 @@
 <template>
     <div class="row mt-3">
-
         <div class="col-3" v-for="item in arrResultFromData" :key="item.id">
-            <div class="home-block__cart text-center p-2">
-                <div class="home-block__cart-city mt-4">
+            <div class="home-block__cart p-2 mt-3">
+                <div class="home-block__close">
+                    <span
+                            v-on:click="$emit('remove-cart', item.name)"
+                    >X</span>
+                </div>
+                <div class="home-block__cart-city mt-4 text-center">
                     <p>
                         {{ item.name }}
                     </p>
@@ -21,7 +25,7 @@
                 <div class="header-block__cart-button">
                     <p>
                         <button class="button"
-                                v-on:click="$emit('remove-cart', item.name)"
+                                v-on:click="$emit('update-cart', item.name)"
                         >Update</button>
                     </p>
                 </div>
