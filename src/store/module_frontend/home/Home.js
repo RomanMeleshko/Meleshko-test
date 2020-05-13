@@ -72,13 +72,6 @@ export default {
             })
         },
         updateCart(state, updated_city) {
-            // state.result_cities = state.result_cities.filter(function(elem) {
-            //     if(elem.name !== updated_city.name) {
-            //        elem = updated_city;
-            //        return true;
-            //     }
-            //     return true;
-            // })
 
             for(var i = 0; i < state.result_cities.length; i++) {
                 if(state.result_cities[i].name == updated_city.name) {

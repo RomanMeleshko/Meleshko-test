@@ -1,7 +1,7 @@
 <template>
     <div class="row mt-3">
         <div class="col-3" v-for="item in arrResultFromData" :key="item.id">
-            <div class="home-block__cart p-2 mt-3">
+            <div class="home-block__cart p-2 mt-3" v-on:click="$emit('add_info', item)">
                 <div class="home-block__close">
                     <span
                             v-on:click="$emit('remove-cart', item.name)"
@@ -32,8 +32,6 @@
 
             </div>
         </div>
-
-
     </div>
 </template>
 
