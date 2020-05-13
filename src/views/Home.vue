@@ -4,7 +4,7 @@
           <div class="home-block">
               <div class="row mt-3">
                   <div class="col-md-4">
-                      <div class="home-block__search-city">
+                      <div class="home-block__search-city mt-2">
                           <div>
                               <label for="city">Введите название города</label>
                           </div>
@@ -16,7 +16,7 @@
                                       </div>
                                   </div>
                                   <div class="col-4 p-0">
-                                      <button type="submit" class="rounded-circle p-1 ml-3">OK</button>
+                                      <button type="submit" class="btn-ok rounded-circle p-2 ml-3">OK</button>
                                   </div>
                               </div>
                           </form>
@@ -24,25 +24,27 @@
 
                       <div class="home-block__additional-info mt-4">
                           <h6>Дополнительная информация</h6>
-                          <div class="header-block__name-city">
-                              <span>Город:</span><span>{{ name }}</span>
+                          <div class="header-block__name-city pt-2">
+                              <span>Город: </span><span><b>{{ name }}</b></span>
                           </div>
-                          <div class="header-block__temp">
-                              <span>Темп.Max: </span><span>{{ temp_max }} </span>&#176;
-                              <span>Темп.Min: </span><span>{{ temp_min }} </span>&#176;
+                          <div class="header-block__temp mt-2">
+                              <span>Темп.Max: </span><span><b>{{ temp_max }}</b> </span>&#176;
+                              <span>Темп.Min: </span><span><b>{{ temp_min }}</b> </span>&#176;
                           </div>
-                          <div class="header-block__humidity">
-                              <span>Влажность: </span><span>{{ humidity }}</span>
+                          <div class="header-block__humidity mt-2">
+                              <span>Влажность: </span><span><b>{{ humidity }}</b></span>
                           </div>
-                          <div class="home-block__pressure">
-                              <span>Давление: </span><span>{{ pressure }}</span>
+                          <div class="home-block__pressure mt-2">
+                              <span>Давление: </span><span><b>{{ pressure }}</b></span>
                           </div>
-                          <div class="header-block__visibility">
-                              <span>Видимость: </span><span>{{ visibility }}</span>
+                          <div class="header-block__visibility mt-2">
+                              <span>Видимость: </span><span><b>{{ visibility }}</b></span>
                           </div>
-                          <div class="header-block__wind">
-                              <span>Поворот ветра: </span><span>{{ wind_deg }}</span><br />
-                              <span>Скрорость ветра: </span><span>{{ wind_speed }}</span>
+                          <div class="header-block__wind mt-2">
+                              <span>Поворот ветра: </span><span><b>{{ wind_deg }}</b></span>
+                              <p class="mt-2">
+                                  <span>Скрорость ветра: </span><span><b>{{ wind_speed }}</b></span>
+                              </p>
                           </div>
                       </div>
 
@@ -115,7 +117,7 @@ export default {
             this.name = obj.name;
             this.temp_max = Math.round(obj.main.temp_max - 273 );
             this.temp_min = Math.round(obj.main.temp_min - 273 );
-            this.pressure = Math.round(obj.main.pressure * 0.00750063755419211*100 ) + "";
+            this.pressure = Math.round(obj.main.pressure * 0.00750063755419211*100 ) + " мм.р.с";
             this.humidity = obj.main.humidity + "%";
             this.visibility = obj.visibility/1000 + "км";
             this.wind_deg = obj.wind.deg;
@@ -138,7 +140,18 @@ export default {
 </script>
 
 <style scoped>
-
     @import "../css/app.css";
 
+.home-block__additional-info,
+.home-block__search-city {
+    font-family: Lato-Light;
+}
+.btn-ok {
+    outline: none;
+    border: none;
+    font-weight: bold;
+    background: rgba(234, 91, 203, 0.99);
+    box-shadow: 0px 0px 12px #333,
+                inset 0px 0px 3px #333;
+}
 </style>
