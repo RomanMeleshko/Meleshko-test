@@ -3,7 +3,7 @@
       <div class="cart-wrapper">
           <div class="home-block">
               <div class="row mt-3">
-                  <div class="col-md-4">
+                  <div class="col-md-4 order-sm-last">
                       <div class="home-block__search-city mt-2">
                           <div>
                               <label for="city">Введите название города</label>
@@ -49,7 +49,7 @@
                       </div>
 
                   </div>
-                  <div class="col-md-8">
+                  <div class="col-md-8 order-sm-first">
                       <div class="home-block__cards">
 
                           <cartCity

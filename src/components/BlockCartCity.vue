@@ -1,6 +1,6 @@
 <template>
     <div class="row mt-3">
-        <div class="col-3" v-for="item in arrResultFromData" :key="item.id">
+        <div class="col-md-3 col-sm-6" v-for="item in arrResultFromData" :key="item.id">
             <div class="home-block__cart p-2 mt-2" v-on:click="$emit('add_info', item)">
                 <div class="home-block__close">
                     <span class="rounded-circle"
