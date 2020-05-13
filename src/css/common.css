@@ -1,6 +1,6 @@
 body {
     background-size: 100% 100%;
-
+    background: linear-gradient(to top, #f5f6f2, rgba(173, 246, 127, 0.75));
 }
 .header-block {
     font-family: Caveat-Bold;
